@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+	<h1>GWF model for {{request.session.model }}</h1>
+
+	</br>
+
+	<form method=POST enctype="multipart/form-data">
+	{% csrf_token %}
+
+	
+	{{form.management_form}}
+	{% for fo in form %}
+		{{fo}}
+	{% endfor %}
+                
+    
+	</br>	
+	<button type="Submit" class="btn btn-primary">Save</button>
+	</form>
+
+
+
+{% endblock %}

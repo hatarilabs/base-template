@@ -1,0 +1,72 @@
+{% extends "layouts/mf6.html" %}
+
+{% block content %}
+<!-- Hero -->
+<section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+    <div class="h100 d-flex align-items-center justify-content-center">
+      <div class="col-4">
+
+        <div class="text-center pt-4 pb-4">
+          <h2>
+              Welcome to Tupac Cloud
+          </h2>
+        </div>
+
+        <h4>
+            Your projects
+        </h4>
+
+
+        <table class="table thead-light">
+          <thead>
+          <tr>
+              <th scope="col" class="text-gray-400">Project name</th>
+              <th colspan="2" scope="col" class="text-gray-400">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% if projectlist %}
+            {% for project in projectlist %}
+            <tr>
+              <td><p class="text-gray-200">{{ project.modelName }}</p></td>
+              <td>
+                <a class="btn btn-primary" href="{% url 'add-limit-layer' token=project.token %}" role="button">
+                  Edit
+                </a>
+              </td>
+              <td>
+                <form method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" value="{{project.token}}" name="project_token">
+                  <button type="Submit" class="btn btn-primary"> Delete </button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="2">
+              <p class="text-gray-200">You have no projects yet.</p>
+              </td>
+            </tr>
+          {% endif %}
+          <tbody>
+        </table>
+
+        <form action="{% url 'project-add' %}">
+          {% if create_project %}
+              <input type="submit" class="btn btn-primary" value="Add project" />
+            {% else %}
+              <p> You cannot create more projects until you update your suscription </p>
+            {% endif %}
+
+        </form>
+
+
+
+      </div>
+
+    </div>
+</section>
+
+{% endblock %}

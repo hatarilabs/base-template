@@ -1,0 +1,103 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% load i18n %}
+{# load account socialaccount #}
+{% load socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+
+
+
+<main>
+    <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+        <div class="container">
+            <p class="text-center">
+                An emerging software for the next challenges in groundwater management
+            </p>
+
+
+
+
+
+            <div class="row justify-content-center form-bg-image" data-background-lg="{{ ASSETS_ROOT }}/img/illustrations/signin.svg">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 fmxw-500">
+                        <div class="text-center text-md-center mb-2 mt-md-0">
+                            <img class="pt-4 pb-4" src="{{ ASSETS_ROOT }}/img/illustrations/tupacCloudLogo.svg" alt="Smiley face" width="320">
+
+                            <div class="socialaccount_ballot pt-4 pb-2">
+                            <p>
+                                {% if msg %}
+                                    <span class="text-danger">
+                                        {{ msg | safe }}
+                                    </span>
+                                {% else %}
+                                    {% trans "Your spatio-temporal option" %}
+                                    <br />
+                                    {% trans "for groundwater modeling" %}
+                                {% endif %}
+                            </p>
+                            </div>
+
+
+                            {% get_providers as socialaccount_providers %}
+
+
+                            <div class="socialaccount_ballot pt-4 pb-4">
+                            {% if socialaccount_providers %}
+                            <p>{% trans "Please sign in with your:" %}</p>
+
+                            <div class="socialaccount_ballot">
+
+                              <ul class="socialaccount_providers list-unstyled">
+                                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                              </ul>
+
+                            </div>
+
+                            {% endif %}
+                            </div>
+
+
+                            <p>
+                              <a class="link-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                Only for developers
+                              </a>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                              <div class="card card-body">
+                                <form class="login form-group" method="POST" action="{% url 'account_login' %}">
+                                  {% csrf_token %}
+                                  <div class="form-group">
+                                  {{ form.as_p }}
+                                  {% if redirect_field_value %}
+                                  <input class="form-control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                  </div>
+                                  {% endif %}
+                                  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+                                </form>
+                              </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        <br />
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

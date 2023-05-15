@@ -1,0 +1,14 @@
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+{% block content %}
+{% for provider in socialaccount_providers %}
+
+<li>
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}"><h4 style="color:#3F83B7;">Hatarilabs Apps account</h4></a>
+</li>
+
+{% endfor %}
+{% endblock %}

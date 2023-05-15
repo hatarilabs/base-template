@@ -1,0 +1,17 @@
+<!-- ul class="social-buttons mb-5 mb-lg-0">
+    <li>
+        <a href="https://twitter.com/hatarilabs" aria-label="twitter social link" class="icon-white me-2">
+            {% bs_icon 'twitter' %}
+        </a>
+    </li>
+    <li>
+        <a href="https://www.facebook.com/hatarilabs" class="icon-white me-2" aria-label="facebook social link">
+            {% bs_icon 'facebook' %}
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/hatarilabs" aria-label="github social link" class="icon-white me-2">
+            {% bs_icon 'github' %}
+        </a>
+    </li>
+</ul -->

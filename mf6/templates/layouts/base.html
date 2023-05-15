@@ -1,0 +1,89 @@
+<!--
+
+=========================================================
+* Volt Free - Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+* License (https://themesberg.com/licensing)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Primary Meta Tags -->
+
+<title>
+    Tupac Cloud - {% block title %}{% endblock %} | Hatarilabs
+</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="Tupac Cloud">
+<meta name="author" content="Hatarilabs">
+<meta name="description" content="Your cloud option for groundwater modeling in MODFLOW 6">
+<meta name="keywords" content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard" />
+<link rel="canonical" href="https://tupaccloud.hatarilabs.com">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tupaccloud.hatarilabs.com">
+<meta property="og:title" content="Hatarilabs">
+<meta property="og:description" content="Your cloud option for groundwater modeling in MODFLOW 6">
+<meta property="og:image" content="{{ ASSETS_ROOT }}/img/brand/riveraquiferinteraction.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://tupaccloud.hatarilabs.com">
+<meta property="twitter:title" content="Hatarilabs">
+<meta property="twitter:description" content="Your cloud option for groundwater modeling in MODFLOW 6">
+<meta property="twitter:image" content="{{ ASSETS_ROOT }}/img/brand/riveraquiferinteraction.png">
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="120x120" href="{{ ASSETS_ROOT }}/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ ASSETS_ROOT }}/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ ASSETS_ROOT }}/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="{{ ASSETS_ROOT }}/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="{{ ASSETS_ROOT }}/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+<link type="text/css" href="{{ ASSETS_ROOT }}/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+<link type="text/css" href="{{ ASSETS_ROOT }}/vendor/notyf/notyf.min.css" rel="stylesheet">
+<link type="text/css" href="{{ ASSETS_ROOT }}/css/volt.css" rel="stylesheet">
+
+<!-- Specific Page JS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+<body>
+
+    {% include 'includes/sidebar.html' %}
+
+    <main class="content">
+
+      {% include 'includes/navigation.html' %}
+
+      {% block content %}{% endblock content %}
+
+      <!-- {% include 'includes/settings-box.html' %} -->
+
+      {% include 'includes/footer.html' %}
+
+    </main>
+
+  {% include 'includes/scripts.html' %}
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>

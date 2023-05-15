@@ -1,0 +1,23 @@
+route:
+  group_by: [ alertname ]
+  repeat_interval: 1m
+  routes:
+    - match:
+        alertname: CPUDown
+      receiver: "cpudown"
+    - match:
+        alertname: CPUUp
+      receiver: "cpuup"
+
+  receiver: "cpudown"
+
+receivers:
+  - name: 'cpudown'
+    webhook_configs:
+      - url: 'http://tupac-cloud:8000/tupacviewer/register_low_process'
+        send_resolved: true
+
+  - name: 'cpuup'
+    webhook_configs:
+      - url: 'http://tupac-cloud:8000/tupacviewer/register_hight_process'
+        send_resolved: true
