@@ -56,11 +56,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.keycloak",
-    # "allauth.socialaccount.providers.google",
-    "django_bootstrap_icons",
-    # config for tupacviewer
-    # "docker",
-    # "tupacviewer"
+     "django_bootstrap_icons",
 ]
 
 MIDDLEWARE = [
@@ -118,7 +114,7 @@ DATABASES = {
     },
 }
 
-default_database = os.environ.get('DJANGO_DATABASE', 'main')
+default_database = os.environ.get('DJANGO_DATABASE', 'tests')
 DATABASES['default'] = DATABASES[default_database]
 # To run
 # export DJANGO_DATABASE='tests'

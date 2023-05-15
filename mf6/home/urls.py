@@ -9,12 +9,8 @@ from mf6.home import views
 #import members.urls
 
 urlpatterns = [
-
     # The home page
     path('',views.Index.as_view(),name='mf6-home'),
-    path('projectadd',views.AddProject.as_view(),name='project-add'),
-    # Matches any html file
-    #re_path(r'^.*\.*', views.pages, name='mf6pages'),
 ]
 
 if settings.DEBUG:

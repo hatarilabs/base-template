@@ -42,28 +42,4 @@ class Index(LoginRequiredMixin,View):
         self.model.objects.get(token = project_token).delete()
         return HttpResponseRedirect(reverse_lazy('mf6-home'))
 
-class AddProject(LoginRequiredMixin,View):
-    model = Project
-    template_name = 'home/project-add.html'
-    form_class = ProjectForm
 
-    def get(self, request, *args, **kwargs):
-        user = self.request.user
-        form = self.form_class(filtered = user)
-        ctx = {'form':form}
-
-        return render(request,self.template_name,ctx)
-
-    def post(self, request, *args, **kwargs):
-        user=self.request.user
-
-        form = self.form_class(user,request.POST)
-        if form.is_valid():
-            obj = form.save(commit = False)
-            obj.user = self.request.user
-            obj.save()
-
-            return HttpResponseRedirect(reverse_lazy('mf6-home'))
-        else:
-            ctx = {'form':form}
-            return render(request,self.template_name,ctx)
