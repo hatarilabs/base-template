@@ -98,16 +98,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'main': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'tupaccloud',
-        'USER': 'postgresgida',
-        'PASSWORD': 'dbHatari_1',
-        'HOST': '190.117.64.182',
-        'PORT': '5500',
-    },
+DATABASES = { 
     'tests': {
         'NAME': 'tests.db',
         'ENGINE': 'django.db.backends.sqlite3'
@@ -172,7 +163,7 @@ AUTHENTICATION_BACKENDS = (
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# GDAL_LIBRARY_PATH = r'C:\Users\saulm\anaconda3\envs\tupac\Library\bin\gdal300.dll'
+
 # GDAL_LIBRARY_PATH = r'C:/Users/encue/anaconda3/envs/tupac/Library/bin/gdal304.dll'
 
 MEDIA_URL = '/projects/'
@@ -210,10 +201,7 @@ LOGIN_REDIRECT_URL = "mf6-home"
 LOGOUT_REDIRECT_URL = "https://accounts.hatarilabs.com/realms/demo/protocol/openid-connect/logout"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
-# DOMAIN_FOR_CONTAINERS = config('DOMAIN_FOR_CONTAINERS')
-# TIME_FOR_STOP_CONTAINER = config('TIME_FOR_STOP_CONTAINER', cast=int)
-# NETWORK_NAME_FOR_CONTAINERS = config('NETWORK_NAME_FOR_CONTAINERS')
-# DOCKER_IMAGE_FOR_LAUNCH = config('DOCKER_IMAGE_FOR_LAUNCH')
+
 # PATH_FROM_PROJECTS = config('PATH_FROM_PROJECTS')
 CSRF_TRUSTED_ORIGINS = [
     'https://tupaccloud.hatarilabs.com', 'https://tupacdev.hatarilabs.com']
