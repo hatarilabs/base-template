@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>VTK.js Example</title>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="https://unpkg.com/vtk.js"></script>
+  <script>
+    vtk.Rendering.Misc.vtkFullScreenRenderWindow.newInstance({
+      rootContainer: document.getElementById('container'),
+      background: [0, 0, 0],
+    });
+
+    // Load and display VTK or VTU file
+    const reader = vtk.IO.Geometry.vtkOBJReader.newInstance();
+    const actor = vtk.Rendering.Core.vtkActor.newInstance();
+    const mapper = vtk.Rendering.Core.vtkMapper.newInstance();
+    const renderer = vtk.Rendering.Core.vtkRenderer.newInstance();
+
+    reader.setUrl('C:/Users/encue/Documents/GitHub/base-template/model.vtk').then(() => {
+      const polydata = reader.getOutputData();
+
+      mapper.setInputData(polydata);
+      actor.setMapper(mapper);
+      renderer.addActor(actor);
+
+      vtk.Rendering.Misc.vtkFullScreenRenderWindow
+        .getRenderers()[0].addActor(actor);
+
+      vtk.Rendering.Misc.vtkFullScreenRenderWindow
+        .getRenderers()[0].resetCamera();
+      vtk.Rendering.Misc.vtkFullScreenRenderWindow
+        .getInteractor()
+        .setDesiredUpdateRate(15);
+    });
+  </script>
+</body>
+</html>

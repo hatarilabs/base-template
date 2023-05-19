@@ -66,6 +66,7 @@ model_names = models.execute_kw(db, uid, password,
 for model in model_names:
     print(model['model'])
 """
+"""
 product_names = models.execute_kw(db, uid, password,
                                 'slide.channel', 'search_read',
                                 [[]], {'fields': ['display_name','enroll','enroll_group_ids','activity_user_id']})
@@ -73,7 +74,7 @@ product_names = models.execute_kw(db, uid, password,
 # Print the model names
 for product in product_names:
     print(product)
-
+"""
 
 product_names = models.execute_kw(db, uid, password,
                                 'sale.order', 'search_read',
@@ -83,7 +84,7 @@ product_names = models.execute_kw(db, uid, password,
 for product in product_names:
     print(product)
 
-
+"""
 product_names = models.execute_kw(db, uid, password,
                                 'subscription.package', 'search_read',
                                 [[]], {'fields': []})
@@ -91,3 +92,4 @@ product_names = models.execute_kw(db, uid, password,
 # Print the model names
 for product in product_names:
     print(product)
+"""

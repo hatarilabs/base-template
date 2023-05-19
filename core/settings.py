@@ -176,7 +176,7 @@ MEDIA_ROOT = '/mnt/tupacProjects'  # review this
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-SITE_ID = 1
+SITE_ID = 0# this changed from 1 to 0
 
 SOCIALACCOUNT_PROVIDERS = {
     'keycloak': {
