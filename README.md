@@ -54,3 +54,13 @@ You can now access the application by opening your web browser and navigating to
 To access the admin panel, open your web browser and go to http://localhost:7777/admin/. Log in using the superuser credentials you created earlier.
 
 That's it! You have successfully set up and launched the Base Template. Feel free to modify the code and customize the project according to your needs.
+
+## To start an app
+Following the project structure you need to place the apps inside the folder mf6. For example if i want to create the app called hatariutils, i need to first create the sub folder hatariutils inside mf6:
+
+mkdir mf6/hatariutils
+
+Then i have to run the following command
+
+python manage.py startapp hatariutils mf6/hatariutils
+
