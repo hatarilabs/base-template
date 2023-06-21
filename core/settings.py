@@ -197,7 +197,6 @@ SOCIALACCOUNT_STORE_TOKENS = True
 
 LOGIN_URL = "mf6-home"
 LOGIN_REDIRECT_URL = "mf6-home"
-#LOGOUT_REDIRECT_URL = ""
 LOGOUT_REDIRECT_URL = "https://accounts.hatarilabs.com/realms/demo/protocol/openid-connect/logout"
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
