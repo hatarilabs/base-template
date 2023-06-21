@@ -32,8 +32,8 @@ demo_dict = {
 	'provider' : 'Keycloak',
 	'name' : 'demo',
 	'client_id' : 'djangoTupacCloud',
-	'secret_key' : 'xrmqy5y9fESkt4xYNZpmB140m4IHHxLq',
-	'key' : 'eyJhbGciOiJIUsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1Y2M4MDZlNS0wM2E5LTQ4ODItOWQzYi04ODg1OWViZTMwZjAifQ.eyJleHAiOjAsImlhdCI6MTY3MDM1NzQzMCwianRpIjoiODUwNjJmYjYtNTkzNS00OTVmLTk5M2EtMDFhNWYzI1NiI2Yjky'
+	'secret_key' : '',
+	'key' : ''
 }
 
 social_app = SocialApp(
