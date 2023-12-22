@@ -1,2 +1,3 @@
+*.pyc
 *.db
 mf6/home/migrations/
